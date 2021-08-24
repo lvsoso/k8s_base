@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wp
+spec:
+  containers:
+    - name: wp
+      image: wordpress
+      resources:
+        requests:
+          memory: '64Mi'
+          cpu: '250m'
+        limits:
+          memory: '128Mi'
+          # 500m = 0.5(核)
+          cpu: '500m'
